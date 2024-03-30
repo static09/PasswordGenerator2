@@ -56,7 +56,7 @@ func main() {
 	var creds string = username + "\r" + token
 	//ask user y/n to copy credentials
 	var copyPass string = "y"
-	fmt.Print("Copy pass? (y/n): ")
+	fmt.Print("Copy creds? (y/n): ")
 	fmt.Scanln(&copyPass)
 	if copyPass == "y" {
 		//initilize clipboard package
@@ -75,14 +75,12 @@ func main() {
 		if board != creds {
 			fmt.Print("Error copying to clipboard.")
 		}
-		input := ""
-		fmt.Print("Press any key to exit...")
-		fmt.Scanln(&input) //exit on any key
-		return
 	}
 	if copyPass == "n" {
 		//threaten user and make them feel bad for not copying the password
-		fmt.Print("Your funeral.\nExiting...")
-		return
+		fmt.Print("Your funeral.\n")
 	}
+	input := ""
+	fmt.Print("Press any key to exit...")
+	fmt.Scanln(&input) //exit on any key
 }
