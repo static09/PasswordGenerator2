@@ -5,5 +5,5 @@
 
 - Prevent passwordLength < 10
 - GUI tool
-   - started putting together Qt packages and building framework 3/30/24
-- Allow users to stare and recall usernames
+   - Started putting together Qt packages and building framework 3/30/24
+- Allow users to store and recall usernames
