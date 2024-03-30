@@ -57,12 +57,15 @@ func main() {
 		//verify clipboard has credentials
 		board := string(clipboard.Read(clipboard.FmtText))
 		if board == creds {
-			fmt.Print("Successfully copied to clipboard!")
+			fmt.Print("Successfully copied to clipboard!\n")
+
 		}
 		if board != creds {
 			fmt.Print("Error copying to clipboard.")
-			fmt.Print(board)
 		}
+		input := ""
+		fmt.Print("Press any key to exit...")
+		fmt.Scanln(&input) //exit on any key
 		return
 	}
 	if copyPass == "n" {
