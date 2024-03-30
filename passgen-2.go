@@ -5,7 +5,6 @@ import (
 	"encoding/base64"
 	"fmt"
 
-	"github.com/therecipe/qt/widgets"
 	"golang.design/x/clipboard"
 )
 
@@ -26,16 +25,18 @@ func GenerateRandomString(s int) (string, error) {
 }
 
 func main() {
-	//call me QT
-	//app := widgets.NewQApplication(len(os.Args), os.Args)
-	// create window
-	window := widgets.NewQMainWindow(nil, 0)
-	window.SetMinimumSize2(250, 200)
-	window.SetWindowTitle("GoPassGen2")
-	//create widget aka content for the window
-	widget := widgets.NewQWidget(nil, 0)
-	widget.SetLayout(widgets.NewQVBoxLayout())
-	window.SetCentralWidget(widget)
+	/*
+		//call me QT
+		app := widgets.NewQApplication(len(os.Args), os.Args)
+		// create window
+		window := widgets.NewQMainWindow(nil, 0)
+		window.SetMinimumSize2(250, 200)
+		window.SetWindowTitle("GoPassGen2")
+		//create widget aka content for the window
+		widget := widgets.NewQWidget(nil, 0)
+		widget.SetLayout(widgets.NewQVBoxLayout())
+		window.SetCentralWidget(widget)
+	*/
 	//Define paramaters
 	username := ""
 	fmt.Print("Username: ")
