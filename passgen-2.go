@@ -37,13 +37,18 @@ func main() {
 		widget.SetLayout(widgets.NewQVBoxLayout())
 		window.SetCentralWidget(widget)
 	*/
-	//Define paramaters
+	// Get credential requirements
 	username := ""
+	passLength := 0
 	fmt.Print("Username: ")
 	fmt.Scanln(&username)
-	passLength := 16
-	fmt.Print("Password Length: ")
-	fmt.Scanln(&passLength)
+	for passLength < 10 {
+		fmt.Print("Password Length: ")
+		fmt.Scanln(&passLength)
+		if passLength < 10 {
+			fmt.Println("Password length must be ten or more.")
+		}
+	}
 	//Generate password
 	token, err := GenerateRandomString(passLength)
 	if err != nil {
@@ -53,7 +58,7 @@ func main() {
 	fmt.Println("User: " + username)
 	fmt.Println("Pass: " + token)
 	//prepare combined paramaters to be sent to clipboard
-	var creds string = username + "\r" + token
+	var creds string = username + "\t" + token
 	//ask user y/n to copy credentials
 	var copyPass string = "y"
 	fmt.Print("Copy creds? (y/n): ")
